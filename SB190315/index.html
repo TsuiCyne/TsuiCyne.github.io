@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon32.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon16.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"tsuicyne.github.io","root":"/","scheme":"Pisces","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="#SB190315刚知道这部电影的时候，我一下子就被吸引到了，原因是标题让我一下子联想到了18年5月锤子科技的发布会。其发布的坚果R1中的R也是取自「Revolution」，更重要是在发布会上还推出了据老罗所说的人类下一代操作设备——TNT工作站，与之配套的是一个通过手势加语音来操控的全新系统。但是在它推出时也因为完成度过低而引发了许多争议，这几天好像已经推出了Smartisan OS 6.6.6">
+<meta property="og:type" content="article">
+<meta property="og:title" content="「Revolution OS」观后感">
+<meta property="og:url" content="https://tsuicyne.github.io/SB190315/index.html">
+<meta property="og:site_name" content="Beluga">
+<meta property="og:description" content="#SB190315刚知道这部电影的时候，我一下子就被吸引到了，原因是标题让我一下子联想到了18年5月锤子科技的发布会。其发布的坚果R1中的R也是取自「Revolution」，更重要是在发布会上还推出了据老罗所说的人类下一代操作设备——TNT工作站，与之配套的是一个通过手势加语音来操控的全新系统。但是在它推出时也因为完成度过低而引发了许多争议，这几天好像已经推出了Smartisan OS 6.6.6">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-03-15T05:55:00.000Z">
+<meta property="article:modified_time" content="2020-01-21T08:27:00.000Z">
+<meta property="article:author" content="TsuiCyne">
+<meta property="article:tag" content="Linux">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://tsuicyne.github.io/SB190315/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true
+  };
+</script>
+
+  <title>「Revolution OS」观后感 | Beluga</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Beluga</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">鲸</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://tsuicyne.github.io/SB190315/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="TsuiCyne">
+      <meta itemprop="description" content="小  徐">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Beluga">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          「Revolution OS」观后感
+        </h1>
+
+        <div class="post-meta">
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-01-21 16:27" itemprop="dateModified" datetime="2020-01-21T16:27:00+08:00">2020-01-21</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%9A%8F%E7%AC%94/" itemprop="url" rel="index"><span itemprop="name">随笔</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/SB190315/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/SB190315/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><em>#SB190315</em><br>刚知道这部电影的时候，我一下子就被吸引到了，原因是标题让我一下子联想到了18年5月锤子科技的发布会。其发布的坚果R1中的R也是取自「Revolution」，更重要是在发布会上还推出了据老罗所说的人类下一代操作设备——TNT工作站，与之配套的是一个通过手势加语音来操控的全新系统。但是在它推出时也因为完成度过低而引发了许多争议，这几天好像已经推出了Smartisan OS 6.6.6版本，现在谈论老罗的这个系统具不具有革命性还为时尚早。但在计算机操作系统发展史上却发生过一场革命，也正是这部影片所围绕的对象「Linux」。</p>
+<a id="more"></a>
+<p>倘若发现文章有所纰漏或存在不妥之处，还望指正</p>
+<p>确切的说，最初的Linux并不能谈得上是个操作系统，其仅仅指的是一个操作系统的内核（Kernel）。要知道，操作系统除了系统内核之外还应该包括有系统的调用接口。不过，在现如今大多数的人都已经习惯用Linux系统来统称所有基于Linux内核，并且使用GNU项目各种工具的操作系统。</p>
+<p>其实早在看这部影片之前，通过道听途说，我便对Linux这个系统的由来有一定的了解，其实也谈不上了解，就是知道一些关于Linux的事情。这部影片让我能够更全面地了解Linux诞生在怎样一个社会环境，又为什么会诞生。</p>
+<p>在那个时候，大家用的都是微软的操作系统，而微软对开源非常不感冒。还在自己家的Windows系统中捆绑了Internet Explorer浏览器，这直接把另一个浏览器厂商——Netscape（网景）给打到角落里面去了。对于这种垄断的行为，引发了许多开发者的不满，担心微软借助其市场地位随意篡改网站所依赖的HTTP和HTML协议，从而排挤掉自己的竞争对手。而这一行为也为后面网景公司成为第一家参与开源的大公司埋下伏笔。</p>
+<p>正是当时市面上的系统都是不自由不开放的，当时还在MIT实验室工作的Richard Matthew Stallman（RMS）也因为自己实验室的许多黑客都进入专利软件公司感到十分气愤和无奈。于是最终他决定自己创造一套自由免费，兼容于Unix系统的操作系统，取名叫「GNU」。这个名字非常有意思，GNU’s Not Unix！GNU不是Unix系统，而GNU是什么呢？GNU不是Unix系统，这是个循环。不得不说，程序员的脑回路和正常人都不太一样hhh。但由于当时人手并不多，而开发一个操作系统又是一个大工程。所以他们就想出了一个主意，不如先从系统上面的应用程序入手，于是许多优秀的自由软件诞生了，其中还包括了很有名的GCC（GNU C Compiler）这是一个C语言的编译器。在这期间，也有许多人加入了他的队伍。而随着时间的推进，开发的软件也越来越多，为了防止自己的软件经过别人的修改就沦为了专利软件。这就有了后来的「GPL通用公共许可证」，这个许可证的大意就是在这个许可证保护下的自由软件无论如何修改再发布，它也必须还是自由软件。当然不论软件再多，一个操作系统最重要的还是它的核心，他们最终的目标还是开发出自己的GNU系统核心，在他们开发内核的过程中，突然发现有个叫Linus Benedict Torvalds的人开发了一个核心，而且进度比他们还快，不仅如此它运行性能和稳定性也都还不错。这个核心就是Linux内核。</p>
+<p>原来，在Helsinki大学的Torvalds因为学业和兴趣接触到了Unix系统，当时整个大学就一部Unix系统主机，仅提供16个终端机。喜欢折腾的他不禁想到“要不我也搞出来一部Unix来玩玩？”不久，他找到了一个叫Minix的类Unix的系统。这个系统是一个叫Andrew Stuart Tanenbaum的教授为了教学需要把Unix的内核给改写出来的操作系统，至于为什么要改写呢？那当然是为了避免Unix的版权纠纷。Torvalds拿到这个系统之后，发现这个教师为了教学上面还附有开发的源码，他在上面学习到许多内核开发的设计概念，但是他也发现一个问题，虽然这个系统很棒，但是教授并不愿意进行功能加强，导致心里就总感觉不得劲。“既然如此那怎么不也自己改写一个系统呢？”他心想，说干就干，他在网上搜索资料，知道了GUN项目借助项目提供的bash工作环境以及GCC编译器等开发工具，捣鼓出了一个系统内核，然后把这个内核放到了网上供大家下载来收集问题反馈。那时候的他就是为了好玩，也没想干个啥大事。就这样，这个内核就被RMS发现了，而且还由于性能更好的原因被用作GNU的系统内核。</p>
+<p>不得不说这真是太巧合了，假如Torvalds不喜欢折腾，之前也没有因为兴趣想要搞出一个类Unix系统，也就不会开发出Linux内核。所以现在你经常可以听到：「兴趣是你最好的老师」。其实我觉得后面还应该增加一句「如果你愿意真正付诸于行动，坚持下去」。我们有时候在做一些事情时，我们往往因为不知道我做这个事情以后能有什么用便放弃了，但是以后的事情谁又说得准呢？不如就坚持下去，努力完成它。</p>
+<blockquote>
+<p>当你不知道将来干啥的时候就专注于眼前的事，努力完成它。说不定哪天有需要用到的地方。</p>
+</blockquote>
+<p>2019/03/15</p>
+<h1 id="编辑日志"><a href="#编辑日志" class="headerlink" title="编辑日志"></a>编辑日志</h1><p><strong>20/01/21</strong><br>1.调整文章编码位置</p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://tsuicyne.github.io/SB190315/" title="「Revolution OS」观后感">https://tsuicyne.github.io/SB190315/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请务必注明出处
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Linux/" rel="tag"># Linux</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/JC190304/" rel="prev" title="VMware：虚拟机安装Ubuntu指南">
+      <i class="fa fa-chevron-left"></i> VMware：虚拟机安装Ubuntu指南
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/BJ190324/" rel="next" title="Linux：文件权限与目录配置">
+      Linux：文件权限与目录配置 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          目录
+        </li>
+        <li class="sidebar-nav-overview">
+          概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#编辑日志"><span class="nav-number">1.</span> <span class="nav-text">编辑日志</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="TsuiCyne"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">TsuiCyne</p>
+  <div class="site-description" itemprop="description">小  徐</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="mailto:TsuiCyne@outlook.com" title="E-Mail → mailto:TsuiCyne@outlook.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i></a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user-circle"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">TsuiCyne</span>
+</div>
+  <div class="powered-by">Powered By  <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'vWVSKpB13xILK5EQxDL2yTKG-MdYXbMMI',
+      appKey     : '4QF7GDNz6kzBgiLWxehflIyF',
+      placeholder: "\\*请您务必填写完整昵称与邮箱，否则评论可能被吞",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

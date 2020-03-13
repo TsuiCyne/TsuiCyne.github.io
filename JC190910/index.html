@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon32.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon16.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"tsuicyne.github.io","root":"/","scheme":"Pisces","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="#JC190910在生活中有太多需要我们记住的密码，电脑开机密码、上网帐号密码、手机服务密码、邮箱登陆密码、银行交易密码等等。大多数人常常采取不同平台使用同一密码的策略，但往往不同平台的密码规则不尽相同，有的必须含有符号，有的又不允许出现符号。更重要的是，这样当某个平台的密码遭到泄露时其他平台可能因此被有心人通过撞库攻破，因此这并不是个多么高明的办法。而如何解决这件令人头大的事情呢，也许像KeeP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="KeePass：密码管理器使用配置指南">
+<meta property="og:url" content="https://tsuicyne.github.io/JC190910/index.html">
+<meta property="og:site_name" content="Beluga">
+<meta property="og:description" content="#JC190910在生活中有太多需要我们记住的密码，电脑开机密码、上网帐号密码、手机服务密码、邮箱登陆密码、银行交易密码等等。大多数人常常采取不同平台使用同一密码的策略，但往往不同平台的密码规则不尽相同，有的必须含有符号，有的又不允许出现符号。更重要的是，这样当某个平台的密码遭到泄露时其他平台可能因此被有心人通过撞库攻破，因此这并不是个多么高明的办法。而如何解决这件令人头大的事情呢，也许像KeeP">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-09-10T13:36:00.000Z">
+<meta property="article:modified_time" content="2020-01-21T08:27:00.000Z">
+<meta property="article:author" content="TsuiCyne">
+<meta property="article:tag" content="KeePass">
+<meta property="article:tag" content="1Password">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://tsuicyne.github.io/JC190910/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true
+  };
+</script>
+
+  <title>KeePass：密码管理器使用配置指南 | Beluga</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Beluga</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">鲸</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://tsuicyne.github.io/JC190910/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="TsuiCyne">
+      <meta itemprop="description" content="小  徐">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Beluga">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          KeePass：密码管理器使用配置指南
+        </h1>
+
+        <div class="post-meta">
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-01-21 16:27" itemprop="dateModified" datetime="2020-01-21T16:27:00+08:00">2020-01-21</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%99%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">教程</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/JC190910/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/JC190910/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><em>#JC190910</em><br>在生活中有太多需要我们记住的密码，电脑开机密码、上网帐号密码、手机服务密码、邮箱登陆密码、银行交易密码等等。大多数人常常采取不同平台使用同一密码的策略，但往往不同平台的密码规则不尽相同，有的必须含有符号，有的又不允许出现符号。更重要的是，这样当某个平台的密码遭到泄露时其他平台可能因此被有心人通过撞库攻破，因此这并不是个多么高明的办法。而如何解决这件令人头大的事情呢，也许像KeePass这类密码管理软件可以帮得上忙。</p>
+<a id="more"></a>
+<p>KeePass我用了挺久，这篇文章也很早就想写。但是在我用KeePass的时候，大问题没有但有个小问题一直困扰我，直到最近才算比较好地解决了。相信这个问题应该不止我一个人遇到，但是网上没有相关的解决方法，有几篇大概写了相关的东西我试了试但是事实上我在几台电脑上试过并不管用，所以这应该是目前你在网上能找到的唯一一篇解决这个问题的文章<em>（你问这个问题到底是啥，不告诉你，继续看就知道了）</em></p>
+<p>倘若发现文章有所纰漏或存在不妥之处，还望指正</p>
+<h1 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h1><ol>
+<li>KeePass<br><a href="https://keepass.info/" target="_blank" rel="noopener">软件官网</a><br><a href="https://keepass.info/download.html" target="_blank" rel="noopener">下载地址</a></li>
+<li>Keepass2Android (for Android)<br><a href="https://play.google.com/store/apps/details?id=keepass2android.keepass2android" target="_blank" rel="noopener">下载地址</a>（404!）</li>
+<li>KeePass语言包<br><a href="https://keepass.info/translations.html" target="_blank" rel="noopener">下载地址</a></li>
+<li>KeePass插件包<br><a href="https://keepass.info/plugins.html" target="_blank" rel="noopener">下载地址</a></li>
+</ol>
+<blockquote>
+<p><em>注：请不要使用非官方推荐软件/插件，包括但不限于精简版、绿色版、增强版等。官方提供简体中文</em></p>
+</blockquote>
+<h1 id="KeePass是什么"><a href="#KeePass是什么" class="headerlink" title="KeePass是什么"></a>KeePass是什么</h1><p>KeePass是一个开源密码管理器，可以帮助您以安全的方式管理密码。您可以将所有密码放在一个数据库中，该数据库使用一个主密钥或密钥文件锁定。因此，您只需记住一个主密码或选择密钥文件即可解锁整个数据库。其使用当前已知的最佳和最安全的加密算法（AES和Twofish）对数据库进行加密</p>
+<h1 id="KeePass与同类软件"><a href="#KeePass与同类软件" class="headerlink" title="KeePass与同类软件"></a>KeePass与同类软件</h1><p>同类软件主要指：1Password、LastPass、EnPass、Keeper等</p>
+<p><strong>优点</strong></p>
+<ol>
+<li>开源<br> KeePass是一款开源密码管理器，被OSI认证。你可以完全访问其源代码编译它，检查其安全性，如果需要你甚至可以修改内置加密算法改用其他</li>
+<li>免费<br> 你可能听说过1Password或LastPass，它们也同为密码管理软件。1Password的知名度和用户量都是绝对领先的，其订阅费用为3美元/月。LastPass虽说有免费版，但部分功能会受到一定阉割，例如倘若你想要完成在电脑端与移动端间同步则需要升级成付费版，费用也要2美元/月。就目前而言，市面上比较主流的密码管理软件订阅价格都不算低，基本都要2-3美元/月，反观KeePass则是一款开源免费软件</li>
+<li>安全<br> 多数的密码管理软件为了使得多平台开发方便通常会将数据库储存在自家云端，KeePass则只能保存在本地，对于密码这类敏感数据可能放自己手上会比较让人安心。KeePass支持高级加密标准（AES，Rijndael）和Twofish算法，获得德国联邦信息安全局推荐，法国网络和信息安全局颁发Niveau证书，可以说KeePass就是现在最安全的密码管理软件</li>
+<li>逼格 
+ <center>KeePass双通道自动输入混淆</center>
+
+</li>
+</ol>
+<p><strong>缺点</strong></p>
+<ol>
+<li>上手难度高<br>KeePass虽然功能十分强大，但带来的问题就是使用起来有些复杂可设置选项非常多。让刚接触的同学一脸懵逼，而官方帮助文档都是全英文，上手难度较高</li>
+<li>界面有些丑，不过问题不大</li>
+</ol>
+<h1 id="软件安装"><a href="#软件安装" class="headerlink" title="软件安装"></a>软件安装</h1><h2 id="软件包下载"><a href="#软件包下载" class="headerlink" title="软件包下载"></a>软件包下载</h2><p>打开KeePass下载地址下载，这里我推荐下载便携式压缩包，下好只需解压即可。好处是软件各种配置文件都保存在程序目录下，便于后期移植</p>
+<h2 id="语言包安装"><a href="#语言包安装" class="headerlink" title="语言包安装"></a>语言包安装</h2><p>软件安装完成后默认英文，修改需添加语言包</p>
+<ol>
+<li>软件主界面点击【View】选择【Change Language…】，弹出【Select Language】框</li>
+<li>【Get More】打开语言包下载页，选择相应语言包下载</li>
+<li>【Open Folder】打开语言包安装目录，将下载好的语言包解压（.lngx）到该文件夹中 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">语言包安装目录：（示例）</span><br><span class="line">D:\KeePass-2.43\Languages</span><br></pre></td></tr></table></figure></li>
+<li>在【Select Language】框选中语言，重启KeePass生效</li>
+</ol>
+<h2 id="插件包安装"><a href="#插件包安装" class="headerlink" title="插件包安装"></a>插件包安装</h2><p>KeePass是一个开源软件，拥有大量优秀的开源插件支持</p>
+<ol>
+<li>软件主界面点击【工具】选择【插件管理器】，弹出【插件】框</li>
+<li>【获取更多插件】打开插件包下载页，选择对应插件包下载</li>
+<li>【打开文件夹】打开插件安装目录，将下载好的插件包解压（.plgx）到该文件夹中 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">插件包安装目录：（示例）</span><br><span class="line">D:\KeePass-2.43\Plugins</span><br></pre></td></tr></table></figure></li>
+<li>重启KeePass生效</li>
+</ol>
+<h1 id="软件配置"><a href="#软件配置" class="headerlink" title="软件配置"></a>软件配置</h1><h2 id="数据库创建"><a href="#数据库创建" class="headerlink" title="数据库创建"></a>数据库创建</h2><ol>
+<li><p>软件主界面点击【文件】选择【新建】，弹出新建数据库点击【OK】</p>
+</li>
+<li><p>选择该数据库（.kdbx）保存的位置（这个位置一定要记住！数据库里面存着你保存的所有数据）</p>
+</li>
+<li><p>设置数据库口令<br> 勾选【显示高级选项】，KeePass提供了3种可组合加密方式<br> <strong>管理密码</strong>：这个很常见，就是设置一个管理密码来加密</p>
+<p> <strong>密钥文件/提供器</strong>：这个是设定一个任意类型的文件（图片、视频、文档等）来加密，具体的工作原理是对设定的文件求其哈希值来作为密钥，所以这就要求该文件不能被修改<br> <em>（什么！你说换个文件可不可以？你说呢！换个文件都可以还加个鬼的密！哦对，对密钥文件进行重命名操作倒是没有影响）</em></p>
+<blockquote>
+<p>注：使用过大的密钥文件会严重影响数据库解锁速度</p>
+</blockquote>
+<p> <strong>Windows用户账户</strong>：这个选项则是把该数据库与该Windows账户绑定，安全性无疑很高。但是倘若你的Windows账户出现问题（被删除、使用命令行重置系统密码等），那可能也打不开该数据库</p>
+ 
+</li>
+<li><p>设置完数据库口令进入软件主界面，还可以继续配置数据库安全<br> 点击【文件】选择【数据库设置】，弹出【数据库配置】框选择【安全】<br> <strong>迭代次数</strong>：次数越高数据库越难被暴力破解，但每次打开数据库耗时也越长。默认值为60000，可以适当调高</p>
+</li>
+</ol>
+<h2 id="自动输入配置"><a href="#自动输入配置" class="headerlink" title="自动输入配置"></a>自动输入配置</h2><p>KeePass支持两种不同自动输入模式：普通自动输入、双通道自动输入混淆</p>
+<blockquote>
+<p>注：如果目标应用程序使用管理员权限运行，对应KeePass也必须使用管理员权限运行才能在此应用程序中使用自动输入</p>
+</blockquote>
+<p><strong>普通自动输入</strong>：自动输入顾名思义就是用软件模拟按键以代替手动输入，而普通自动输入就是将待输入字符逐个按顺序输入</p>
+<p><strong>双通道自动输入混淆</strong>：听名字就觉得很厉害，效果如上图所示。工作原理是将待输入字符分为两部分，然后使用模拟按键和复制粘贴两种方式混合输入，输入完成后再还原输入前的剪切板内容。这样的做的好处就是单一的键盘记录软件或剪切板监听软件都无法窃取到输入的完整字段<em>（其实最重要的是什么，逼格！）</em><br>由于有些应用程序/网页不支持移动光标/粘贴操作，此功能默认不启用。必须在添加编辑记录时点击【自动输入】，勾选【双通道自动输入混淆】，这样逐条设置对于有上百条密码的用户来说无疑是一场灾难，这个我们可以通过建预设模板来解决。</p>
+
+
+<h3 id="匹配规则配置"><a href="#匹配规则配置" class="headerlink" title="匹配规则配置"></a>匹配规则配置</h3><p>自动输入时，KeePass会根据当前活动窗口标题在数据库中搜索相匹配的记录，如果一条记录的标题或网址包含在活动窗口标题内那么这条记录将被匹配。举个例子：你现在使用Chrome浏览器上B站，准备使用KeePass自动输入账号密码。你按下自动输入热键，KeePass会读取活动窗口标题【哔哩哔哩弹幕视频网 - ( ゜- ゜)つロ 乾杯~ - bilibili - Google Chrome】，在数据库中搜索哪条记录与之匹配，如果数据中刚好有匹配记录则执行自动输入。<em>（是不是听起来感觉很聪明的亚子？）</em>然而事实上并不是这样，问题出就出在KeePass是对活动窗口标题匹配。倘若数据库中只有B站的记录那的确可以实现上述操作，但是当你实际用的时候你会发现数据库中除了有B站的记录还有Google的记录，没错，后面那个Google Chrome也会被匹配到，这个时候KeePass直接就傻了不知道该输入哪个记录。不过还好当出现一窗口匹配多个记录时会自动弹出【选取自动输入记录】框让你选择</p>
+<p><strong>具体设置</strong></p>
+<ol>
+<li><p>网上很多文章会推荐你设置每次自动输入之前都弹出【选取自动输入记录】框来选择以防误输<br> 软件主界面点击【工具】选择【选项】，弹出【选项】框选择【高级】，勾选【总是显示全局自动输入记录选取对话框】</p>
+ 
+</li>
+<li><p>而我则不喜欢这么设，既然叫自动输入还要选多一步那可太不聪明了<br> 我们从源头入手，KeePass之所以会匹配错是因为浏览器的Google Chrome后缀，那我们就把Google的记录给删了不就完了！<em>（我可真是太聪明了）*开个玩笑，不过实际上也差不多，我们可以把Google记录给改下名或者设成过期，这样也就不会被匹配到，但是麻烦就是在登录Google网页时用不了自动输入，算是牺牲一条成就千万条<br> *（Google在这里只是举个例子，其他后缀也是同样思路）</em></p>
+</li>
+</ol>
+<blockquote>
+<p>还有个办法就是把浏览器的后缀给改/删了，据说可行不过具体的我没有深入研究，有兴趣的同学可以试试</p>
+</blockquote>
+<h3 id="键入规则配置"><a href="#键入规则配置" class="headerlink" title="键入规则配置"></a>键入规则配置</h3><p>匹配规则是告诉KeePass怎么去匹配数据库中的记录，键入规则则是告诉KeePass怎么去输入你的记录。概要里提到的问题主要就是出现在这里。你总不想当你周围有人看着你，正准备秀一手的时候突然像下图一样吧，尴尬且不说，关键是你的密码可都是明文显示在屏幕上</p>
+
+
+<p>网上关于键入规则的资料，只要你用的是Windows10，那就通通会有或多或少问题<em>（现在这个时候Windows10应该是绝对主流了吧，Windows7可能也会有一样问题不过我也没有去试）</em>，这个你只有看我这篇文章才能实现真正的一步到位</p>
+<p><strong>具体设置</strong></p>
+<ol>
+<li><p>软件主界面左侧右键数据库最顶层选择【编辑群组】，弹出【编辑群组】框选择【自动输入】，选中【替代默认规则为】，这样我们可以在下面填入我们自己的键入规则，这里先解释下默认键入规则</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">默认键入规则：</span><br><span class="line">&#123;USERNAME&#125;&#123;TAB&#125;&#123;PASSWORD&#125;&#123;ENTER&#125;</span><br><span class="line"></span><br><span class="line">解释：</span><br><span class="line">&#123;USERNAME&#125;：键入用户名</span><br><span class="line">&#123;TAB&#125;：按[Tab]键（切换到密码输入行）</span><br><span class="line">&#123;PASSWORD&#125;：键入密码</span><br><span class="line">&#123;ENTER&#125;：按[Enter]键</span><br></pre></td></tr></table></figure>
+<p> 如果我们直接使用默认规则会是什么样的呢</p>
+ 
+
+<p> 默认键入规则明显不适合有中文输入法的用户，那我们可以改进一下</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">改进键入规则1：</span><br><span class="line">+&#123;DELAY 100&#125;&#123;CLEARFIELD&#125;&#123;USERNAME&#125;&#123;TAB&#125;&#123;PASSWORD&#125;&#123;ENTER&#125;</span><br><span class="line"></span><br><span class="line">解释：</span><br><span class="line">+：按[Shift]键（为了将中文输入切换成英文输入）</span><br><span class="line">&#123;DELAY 100&#125;：延时100ms</span><br><span class="line">&#123;CLEARFIELD&#125;：清空输入框</span><br></pre></td></tr></table></figure>
+<p> <em>（我们试一下，欸这样设好像可以！我们再来一遍，啊怎么又不行了？）</em><br> 原因呢就是因为第一遍键入的时候，输入法是中文，执行一遍自动输入之后，输入法就变成了英文。英文再去执行自动输入一经过<code>[Shift]</code>键又变成了中文。反正就是你要确保你执行自动输入时输入法是中文的，这样一说好像改了和没改根本没差，我默认键入规则确保执行是英文的不就好了<em>（ ￣ ￣||| 好像的确是这个理）<em>。这个时候可能有些比较仔细的人会想到一个办法：那我在规则里面加上两个<code>[Shift]</code>键不就好了，输入前一个输入后一个。</em>（好像可以欸，我怎么早没有想到）</em></p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">改进键入规则2：</span><br><span class="line">+&#123;DELAY 100&#125;&#123;CLEARFIELD&#125;&#123;USERNAME&#125;&#123;TAB&#125;&#123;PASSWORD&#125;+&#123;DELAY 100&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注：<code>[Shift]</code>键后一定要加延时，不然会失效</p>
+</blockquote>
+<p> 但是真的可以吗？当然不是，如果一开始输入法是英文就又回到原点，换句话说就是你根本不能保证你每次需要自动输入的时候输入法到底是处在英文还是中文。那还有什么办法吗？前面虽然改来改去还是不行但是它却给了我们一个思路：我们可以通过按某个键来切换输入法中英文。我们顺着这个思路，那有没有什么办法是可以通过按某个键来设定输入法成英文呢？等等，这不就是热键绑定吗！不过微软输入法好像并不支持绑定热键来把输入法设成英文<br> <em>（欸这是什么？）</em></p>
+ 
+<p> 这个是设置Windows切换语言热键，欸那我们可以加一个美式键盘再绑定上热键不就可以用热键来回切了</p>
+ 
+<p> 然而世界就是这么奇妙，就在你以为一切都要大功告成的时候。我的电脑一重启，发现刚刚绑定的美式键盘热键恢复成默认没有绑定。起初我以为是自己没有保存好，又试了几次还换了不同的按键都不行。在这里捣鼓了好几天重做了几遍系统才终于认命这是Windows的Bug（Windows10 1903 的 09 累计更新 KB4517211 这个问题还是没有修复）。后面我想要不下个搜狗输入法看看能不能设置，下好之后突然发现搜狗输入法也可以绑定热键，把搜狗输入法设成默认英文输入，绑定好热键重启电脑，没有恢复默认！调好键入规则，试一下居然可以，当你需要自动输入时，自动切换成搜狗输入法输入，输入完成后切换回微软输入法<br> 然而我还高估Windows了，我隔天再用的时候发现可以切过去搜狗输入法但是又切不回微软输入法，赶紧检查一下热键却发现热键都是设好的没有问题。动了一下开机默认输入法之后（没有更改还是默认），发现问题解决，但是重启又不行<em>（Windows10真不愧被称为Bug10,巨硬真是修了一个Bug又留下两个Bug）</em><br> 经过我的各种尝试，我捣鼓出了现阶段的终极解决方法：微软输入法的切换热键设成【左Alt+Shift+0】（前面的键不能改，后面的数字可以随便改），搜狗输入法的切换热键设成【Ctrl+0】（这个应该可以随便设，问题不大），然后配合KeePass的键入规则</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">终极键入规则：</span><br><span class="line">^0&#123;CLEARFIELD&#125;&#123;USERNAME&#125;&#123;TAB&#125;&#123;PASSWORD&#125;%+0</span><br><span class="line"></span><br><span class="line">解释：</span><br><span class="line">^0：按[Ctrl]+[0]</span><br><span class="line">%+0：按[Alt]+[Shift]+[0]</span><br></pre></td></tr></table></figure>
+<p> 还有这里没有使用<code>{ENTER}</code>结尾，因为现在大多数网站输入完账号密码之后大都还有验证码。直到这里才可以真正实现一键输入账号密码，不用再担心输入法到底是中文还是英文</p>
+</li>
+</ol>
+<p>参考资料：</p>
+<ol>
+<li><p><a href="https://post.smzdm.com/p/713042/" target="_blank" rel="noopener">从入门到熟练：KeePass全网最详使用指南 - 值不值得买</a></p>
+</li>
+<li><p><a href="https://blog.csdn.net/SingWarm/article/details/90669580" target="_blank" rel="noopener">KeePass教程之二：完美的通用自动输入规则 - CSDN</a></p>
+</li>
+</ol>
+<h1 id="编辑日志"><a href="#编辑日志" class="headerlink" title="编辑日志"></a>编辑日志</h1><p><strong>20/01/21</strong><br>1.修改文章名称为【KeePass：密码管理器使用配置指南】<br>2.调整文章编码位置</p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://tsuicyne.github.io/JC190910/" title="KeePass：密码管理器使用配置指南">https://tsuicyne.github.io/JC190910/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请务必注明出处
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/KeePass/" rel="tag"># KeePass</a>
+              <a href="/tags/1Password/" rel="tag"># 1Password</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/BJ190619/" rel="prev" title="基于Cortex-A53的语音识别系统">
+      <i class="fa fa-chevron-left"></i> 基于Cortex-A53的语音识别系统
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/QT200106/" rel="next" title="博客格式标准">
+      博客格式标准 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          目录
+        </li>
+        <li class="sidebar-nav-overview">
+          概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#相关链接"><span class="nav-number">1.</span> <span class="nav-text">相关链接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#KeePass是什么"><span class="nav-number">2.</span> <span class="nav-text">KeePass是什么</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#KeePass与同类软件"><span class="nav-number">3.</span> <span class="nav-text">KeePass与同类软件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#软件安装"><span class="nav-number">4.</span> <span class="nav-text">软件安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#软件包下载"><span class="nav-number">4.1.</span> <span class="nav-text">软件包下载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#语言包安装"><span class="nav-number">4.2.</span> <span class="nav-text">语言包安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插件包安装"><span class="nav-number">4.3.</span> <span class="nav-text">插件包安装</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#软件配置"><span class="nav-number">5.</span> <span class="nav-text">软件配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库创建"><span class="nav-number">5.1.</span> <span class="nav-text">数据库创建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自动输入配置"><span class="nav-number">5.2.</span> <span class="nav-text">自动输入配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#匹配规则配置"><span class="nav-number">5.2.1.</span> <span class="nav-text">匹配规则配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#键入规则配置"><span class="nav-number">5.2.2.</span> <span class="nav-text">键入规则配置</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#编辑日志"><span class="nav-number">6.</span> <span class="nav-text">编辑日志</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="TsuiCyne"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">TsuiCyne</p>
+  <div class="site-description" itemprop="description">小  徐</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="mailto:TsuiCyne@outlook.com" title="E-Mail → mailto:TsuiCyne@outlook.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i></a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user-circle"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">TsuiCyne</span>
+</div>
+  <div class="powered-by">Powered By  <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'vWVSKpB13xILK5EQxDL2yTKG-MdYXbMMI',
+      appKey     : '4QF7GDNz6kzBgiLWxehflIyF',
+      placeholder: "\\*请您务必填写完整昵称与邮箱，否则评论可能被吞",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>
