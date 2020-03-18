@@ -1,28 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>序</title>
-    <url>/SB190301/</url>
-    <content><![CDATA[<p><em>#SB190301</em><br>可终于搭起来啦，折腾了几天。作为第一篇文章，那就聊一下我之所以建这个博客的目的与初衷以及为什么选择自己搭。</p>
+    <title>Beluga：相关格式&amp;标准</title>
+    <url>/QT001/</url>
+    <content><![CDATA[<p><em>#QT001</em><br>博客相关标准&amp;格式</p>
 <a id="more"></a>
 <p>倘若发现文章有所纰漏或存在不妥之处，还望指正</p>
-<h1 id="初衷"><a href="#初衷" class="headerlink" title="初衷"></a>初衷</h1><p>在我还在上高中的时候，我就有萌生过自己建一个博客的想法。那时我们学校里面有一个社团，叫「工程设计社」，我也是其中一员。不得不说，在当时存在于高中的社团还是不多的，而这个社团由一群喜欢捣鼓计算机的人建立，平时就是讲解介绍一些计算机概念和一些较为简单的编程语法算法。你可能有听说过「青少年开发者大会」这个活动，其创办人刘敬韬同学当时也就是我们的前社长。我在这个社团里面了解到许多之前从未接触到的东西，像Linux，GPL协议等等。而其中我也是从那第一次知道开源这个词，让我明白有些想法是应该被分享记录的，而这也就是我最初的想要拥有一个博客的原因。</p>
-<h1 id="现阶段的原因"><a href="#现阶段的原因" class="headerlink" title="现阶段的原因"></a>现阶段的原因</h1><p>而后，虽然想法可美好，然而现实是残酷的。受限于当时的时间精力（老师和家长整天都看着你呢），建立博客的计划也就不了了之了。上了大学以后，随着自己经验阅历的增加，又跟着老师参加了几个项目。我想是时候把这个计划重新提上日程了。一方面就像上文所说的可以分享一些自己的想法和经验。另一方面呢也能将自己学到的知识还有一些项目经验比较系统地整理记录下来，这样不仅日后查阅起来你可以知道自己以前做过什么，还可以让自己养成写随笔的习惯（趁机治疗一下自己的拖延症），何乐而不为呢。这就是现阶段的建博的原因。</p>
-<h1 id="为什么选择自己搭"><a href="#为什么选择自己搭" class="headerlink" title="为什么选择自己搭"></a>为什么选择自己搭</h1><p>再说说为什么会选择搭一个而不是找个现有的类似CSDN，简书之类的平台。首先并不是说这些平台不好，相反现有的平台的功能都非常强大，链接了各种东西。但是带来的问题就是也会带来一些广告和某些”特殊用户”的打扰（就连短信都会遇到）。其次由于我本身对博客定位的原因，也并不需要那么多高级的功能和复杂的界面，可以简简单单可以记录些东西就足矣。当然最最主要原因就是自己不折腾一下就浑身难受哈哈哈。<br>最后，也希望自己能够真正的把这个博客经营下去，做到定时地更新维护。<br>好的，就这样。</p>
-<p>2019/3/1</p>
-<h1 id="编辑日志"><a href="#编辑日志" class="headerlink" title="编辑日志"></a>编辑日志</h1><p><strong>20/01/21</strong><br>1.调整文章编码位置</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>博客格式标准</title>
-    <url>/QT200106/</url>
-    <content><![CDATA[<p><em>#QT200106</em><br>博客相关标准&amp;格式</p>
-<a id="more"></a>
-<p>倘若发现文章有所纰漏或存在不妥之处，还望指正</p>
-<p>Version：2.1<br>更新于2020年3月13日</p>
+<p>Version：2.2</p>
 <h1 id="博客目录"><a href="#博客目录" class="headerlink" title="博客目录"></a>博客目录</h1><p>-随笔<br>-教程<br>-笔记<br>&emsp;&emsp;-学习<br>&emsp;&emsp;-项目<br>-其他</p>
 <h1 id="文章格式"><a href="#文章格式" class="headerlink" title="文章格式"></a>文章格式</h1><p>为了博客便于读者阅读查询，也使显示风格与内容格式能够更加统一，为此特有着如下相关标准与格式</p>
 <h2 id="是否需要隔行"><a href="#是否需要隔行" class="headerlink" title="是否需要隔行"></a>是否需要隔行</h2><h3 id="需要隔行"><a href="#需要隔行" class="headerlink" title="需要隔行"></a>需要隔行</h3><ol>
@@ -47,7 +31,10 @@
 <h2 id="注释使用"><a href="#注释使用" class="headerlink" title="注释使用"></a>注释使用</h2><ol>
 <li>单行注释<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">注：...</span><br></pre></td></tr></table></figure></li>
 <li>多行注释<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">注：</span><br><span class="line">1. ...</span><br><span class="line">2. ...</span><br></pre></td></tr></table></figure>
-若是在正常模式下应加引用符[&gt;]，代码模式下则不加</li>
+<blockquote>
+<p>注：若是在正常模式下应加引用符[&gt;]，代码模式下则不加</p>
+</blockquote>
+</li>
 </ol>
 <h2 id="特殊显示"><a href="#特殊显示" class="headerlink" title="特殊显示"></a>特殊显示</h2><ol>
 <li>按键显示<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#96;[Ctrl]&#96;+&#96;[C]&#96;（代码模式：[Ctrl]+[C]）</span><br></pre></td></tr></table></figure></li>
@@ -55,8 +42,11 @@
 </ol>
 <h2 id="序号分隔"><a href="#序号分隔" class="headerlink" title="序号分隔"></a>序号分隔</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1. ...</span><br><span class="line">    1) ...</span><br><span class="line">    2) ...</span><br><span class="line">2. ...</span><br></pre></td></tr></table></figure>
 
-<h1 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h1><h2 id="主站更新日志（关于页尾部）"><a href="#主站更新日志（关于页尾部）" class="headerlink" title="主站更新日志（关于页尾部）"></a>主站更新日志（关于页尾部）</h2><p>文章:<br>&emsp;-上架/下架/编辑<br>&emsp;&emsp;上架/下架文章#XXXXXX【…】<br>&emsp;&emsp;编辑文章【…】<br>内容：<br>&emsp;-修改/优化/完善<br>页面/组件：<br>&emsp;-新增/移去/调整<br>功能：<br>&emsp;-增加/删除/开启/关闭</p>
-<h2 id="文章编辑日志（文章尾部）"><a href="#文章编辑日志（文章尾部）" class="headerlink" title="文章编辑日志（文章尾部）"></a>文章编辑日志（文章尾部）</h2><p>更名：<br>&emsp;修改文章名称为【…】<br>完善：<br>&emsp;完善文章前言部分/后续章节/摘要部分<br>修改<br>&emsp;修改文章符号/用词<br>调整<br>&emsp;调整文章（部分）引用样式/文章编码位置<br>修复/优化：<br>&emsp;修复/优化文章…问题</p>
+<h1 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h1><h2 id="主站更新日志（关于页尾部）"><a href="#主站更新日志（关于页尾部）" class="headerlink" title="主站更新日志（关于页尾部）"></a>主站更新日志（关于页尾部）</h2><p>文章:<br>&emsp;-上架/下架/编辑<br>&emsp;&emsp;上架/下架文章#XXXXXX【…】<br>&emsp;&emsp;编辑文章【…】<br>内容：<br>&emsp;-更新/修改/完善<br>问题：<br>&emsp;-修复/优化…问题<br>页面/组件：<br>&emsp;-新增/移去/调整<br>功能：<br>&emsp;-增加/删除/开启/关闭</p>
+<h2 id="文章编辑日志（文章尾部）"><a href="#文章编辑日志（文章尾部）" class="headerlink" title="文章编辑日志（文章尾部）"></a>文章编辑日志（文章尾部）</h2><p>更名：<br>&emsp;修改文章名称为【…】<br>完善：<br>&emsp;完善文章前言部分/后续章节/摘要部分<br>修改<br>&emsp;修改文章符号/用词<br>调整<br>&emsp;调整文章（部分）引用样式/文章编码位置<br>问题：<br>&emsp;修复/优化文章…问题</p>
+<blockquote>
+<p>注：QT200106不写编辑日志</p>
+</blockquote>
 ]]></content>
       <categories>
         <category>其他</category>
@@ -85,7 +75,7 @@
 <li>开源<br> KeePass是一款开源密码管理器，被OSI认证。你可以完全访问其源代码编译它，检查其安全性，如果需要你甚至可以修改内置加密算法改用其他</li>
 <li>免费<br> 你可能听说过1Password或LastPass，它们也同为密码管理软件。1Password的知名度和用户量都是绝对领先的，其订阅费用为3美元/月。LastPass虽说有免费版，但部分功能会受到一定阉割，例如倘若你想要完成在电脑端与移动端间同步则需要升级成付费版，费用也要2美元/月。就目前而言，市面上比较主流的密码管理软件订阅价格都不算低，基本都要2-3美元/月，反观KeePass则是一款开源免费软件</li>
 <li>安全<br> 多数的密码管理软件为了使得多平台开发方便通常会将数据库储存在自家云端，KeePass则只能保存在本地，对于密码这类敏感数据可能放自己手上会比较让人安心。KeePass支持高级加密标准（AES，Rijndael）和Twofish算法，获得德国联邦信息安全局推荐，法国网络和信息安全局颁发Niveau证书，可以说KeePass就是现在最安全的密码管理软件</li>
-<li>逼格 
+<li>逼格 <img src="/JC190910/demo_1.gif" class="">
  <center>KeePass双通道自动输入混淆</center>
 
 </li>
@@ -121,7 +111,7 @@
 <p>注：使用过大的密钥文件会严重影响数据库解锁速度</p>
 </blockquote>
 <p> <strong>Windows用户账户</strong>：这个选项则是把该数据库与该Windows账户绑定，安全性无疑很高。但是倘若你的Windows账户出现问题（被删除、使用命令行重置系统密码等），那可能也打不开该数据库</p>
- 
+ <img src="/JC190910/create.png" class="">
 </li>
 <li><p>设置完数据库口令进入软件主界面，还可以继续配置数据库安全<br> 点击【文件】选择【数据库设置】，弹出【数据库配置】框选择【安全】<br> <strong>迭代次数</strong>：次数越高数据库越难被暴力破解，但每次打开数据库耗时也越长。默认值为60000，可以适当调高</p>
 </li>
@@ -132,13 +122,13 @@
 </blockquote>
 <p><strong>普通自动输入</strong>：自动输入顾名思义就是用软件模拟按键以代替手动输入，而普通自动输入就是将待输入字符逐个按顺序输入</p>
 <p><strong>双通道自动输入混淆</strong>：听名字就觉得很厉害，效果如上图所示。工作原理是将待输入字符分为两部分，然后使用模拟按键和复制粘贴两种方式混合输入，输入完成后再还原输入前的剪切板内容。这样的做的好处就是单一的键盘记录软件或剪切板监听软件都无法窃取到输入的完整字段<em>（其实最重要的是什么，逼格！）</em><br>由于有些应用程序/网页不支持移动光标/粘贴操作，此功能默认不启用。必须在添加编辑记录时点击【自动输入】，勾选【双通道自动输入混淆】，这样逐条设置对于有上百条密码的用户来说无疑是一场灾难，这个我们可以通过建预设模板来解决。</p>
-
+<img src="/JC190910/AutoInput_1.png" class="">
 
 <h3 id="匹配规则配置"><a href="#匹配规则配置" class="headerlink" title="匹配规则配置"></a>匹配规则配置</h3><p>自动输入时，KeePass会根据当前活动窗口标题在数据库中搜索相匹配的记录，如果一条记录的标题或网址包含在活动窗口标题内那么这条记录将被匹配。举个例子：你现在使用Chrome浏览器上B站，准备使用KeePass自动输入账号密码。你按下自动输入热键，KeePass会读取活动窗口标题【哔哩哔哩弹幕视频网 - ( ゜- ゜)つロ 乾杯~ - bilibili - Google Chrome】，在数据库中搜索哪条记录与之匹配，如果数据中刚好有匹配记录则执行自动输入。<em>（是不是听起来感觉很聪明的亚子？）</em>然而事实上并不是这样，问题出就出在KeePass是对活动窗口标题匹配。倘若数据库中只有B站的记录那的确可以实现上述操作，但是当你实际用的时候你会发现数据库中除了有B站的记录还有Google的记录，没错，后面那个Google Chrome也会被匹配到，这个时候KeePass直接就傻了不知道该输入哪个记录。不过还好当出现一窗口匹配多个记录时会自动弹出【选取自动输入记录】框让你选择</p>
 <p><strong>具体设置</strong></p>
 <ol>
 <li><p>网上很多文章会推荐你设置每次自动输入之前都弹出【选取自动输入记录】框来选择以防误输<br> 软件主界面点击【工具】选择【选项】，弹出【选项】框选择【高级】，勾选【总是显示全局自动输入记录选取对话框】</p>
- 
+ <img src="/JC190910/AutoInput_2.png" class="">
 </li>
 <li><p>而我则不喜欢这么设，既然叫自动输入还要选多一步那可太不聪明了<br> 我们从源头入手，KeePass之所以会匹配错是因为浏览器的Google Chrome后缀，那我们就把Google的记录给删了不就完了！<em>（我可真是太聪明了）*开个玩笑，不过实际上也差不多，我们可以把Google记录给改下名或者设成过期，这样也就不会被匹配到，但是麻烦就是在登录Google网页时用不了自动输入，算是牺牲一条成就千万条<br> *（Google在这里只是举个例子，其他后缀也是同样思路）</em></p>
 </li>
@@ -147,7 +137,7 @@
 <p>还有个办法就是把浏览器的后缀给改/删了，据说可行不过具体的我没有深入研究，有兴趣的同学可以试试</p>
 </blockquote>
 <h3 id="键入规则配置"><a href="#键入规则配置" class="headerlink" title="键入规则配置"></a>键入规则配置</h3><p>匹配规则是告诉KeePass怎么去匹配数据库中的记录，键入规则则是告诉KeePass怎么去输入你的记录。概要里提到的问题主要就是出现在这里。你总不想当你周围有人看着你，正准备秀一手的时候突然像下图一样吧，尴尬且不说，关键是你的密码可都是明文显示在屏幕上</p>
-
+<img src="/JC190910/demo_2.gif" class="">
 
 <p>网上关于键入规则的资料，只要你用的是Windows10，那就通通会有或多或少问题<em>（现在这个时候Windows10应该是绝对主流了吧，Windows7可能也会有一样问题不过我也没有去试）</em>，这个你只有看我这篇文章才能实现真正的一步到位</p>
 <p><strong>具体设置</strong></p>
@@ -155,7 +145,7 @@
 <li><p>软件主界面左侧右键数据库最顶层选择【编辑群组】，弹出【编辑群组】框选择【自动输入】，选中【替代默认规则为】，这样我们可以在下面填入我们自己的键入规则，这里先解释下默认键入规则</p>
  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">默认键入规则：</span><br><span class="line">&#123;USERNAME&#125;&#123;TAB&#125;&#123;PASSWORD&#125;&#123;ENTER&#125;</span><br><span class="line"></span><br><span class="line">解释：</span><br><span class="line">&#123;USERNAME&#125;：键入用户名</span><br><span class="line">&#123;TAB&#125;：按[Tab]键（切换到密码输入行）</span><br><span class="line">&#123;PASSWORD&#125;：键入密码</span><br><span class="line">&#123;ENTER&#125;：按[Enter]键</span><br></pre></td></tr></table></figure>
 <p> 如果我们直接使用默认规则会是什么样的呢</p>
- 
+ <img src="/JC190910/demo_3.gif" class="">
 
 <p> 默认键入规则明显不适合有中文输入法的用户，那我们可以改进一下</p>
  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">改进键入规则1：</span><br><span class="line">+&#123;DELAY 100&#125;&#123;CLEARFIELD&#125;&#123;USERNAME&#125;&#123;TAB&#125;&#123;PASSWORD&#125;&#123;ENTER&#125;</span><br><span class="line"></span><br><span class="line">解释：</span><br><span class="line">+：按[Shift]键（为了将中文输入切换成英文输入）</span><br><span class="line">&#123;DELAY 100&#125;：延时100ms</span><br><span class="line">&#123;CLEARFIELD&#125;：清空输入框</span><br></pre></td></tr></table></figure>
@@ -165,9 +155,9 @@
 <p>注：<code>[Shift]</code>键后一定要加延时，不然会失效</p>
 </blockquote>
 <p> 但是真的可以吗？当然不是，如果一开始输入法是英文就又回到原点，换句话说就是你根本不能保证你每次需要自动输入的时候输入法到底是处在英文还是中文。那还有什么办法吗？前面虽然改来改去还是不行但是它却给了我们一个思路：我们可以通过按某个键来切换输入法中英文。我们顺着这个思路，那有没有什么办法是可以通过按某个键来设定输入法成英文呢？等等，这不就是热键绑定吗！不过微软输入法好像并不支持绑定热键来把输入法设成英文<br> <em>（欸这是什么？）</em></p>
- 
+ <img src="/JC190910/AutoInput_3.png" class="">
 <p> 这个是设置Windows切换语言热键，欸那我们可以加一个美式键盘再绑定上热键不就可以用热键来回切了</p>
- 
+ <img src="/JC190910/AutoInput_4.png" class="">
 <p> 然而世界就是这么奇妙，就在你以为一切都要大功告成的时候。我的电脑一重启，发现刚刚绑定的美式键盘热键恢复成默认没有绑定。起初我以为是自己没有保存好，又试了几次还换了不同的按键都不行。在这里捣鼓了好几天重做了几遍系统才终于认命这是Windows的Bug（Windows10 1903 的 09 累计更新 KB4517211 这个问题还是没有修复）。后面我想要不下个搜狗输入法看看能不能设置，下好之后突然发现搜狗输入法也可以绑定热键，把搜狗输入法设成默认英文输入，绑定好热键重启电脑，没有恢复默认！调好键入规则，试一下居然可以，当你需要自动输入时，自动切换成搜狗输入法输入，输入完成后切换回微软输入法<br> 然而我还高估Windows了，我隔天再用的时候发现可以切过去搜狗输入法但是又切不回微软输入法，赶紧检查一下热键却发现热键都是设好的没有问题。动了一下开机默认输入法之后（没有更改还是默认），发现问题解决，但是重启又不行<em>（Windows10真不愧被称为Bug10,巨硬真是修了一个Bug又留下两个Bug）</em><br> 经过我的各种尝试，我捣鼓出了现阶段的终极解决方法：微软输入法的切换热键设成【左Alt+Shift+0】（前面的键不能改，后面的数字可以随便改），搜狗输入法的切换热键设成【Ctrl+0】（这个应该可以随便设，问题不大），然后配合KeePass的键入规则</p>
  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">终极键入规则：</span><br><span class="line">^0&#123;CLEARFIELD&#125;&#123;USERNAME&#125;&#123;TAB&#125;&#123;PASSWORD&#125;%+0</span><br><span class="line"></span><br><span class="line">解释：</span><br><span class="line">^0：按[Ctrl]+[0]</span><br><span class="line">%+0：按[Alt]+[Shift]+[0]</span><br></pre></td></tr></table></figure>
 <p> 还有这里没有使用<code>{ENTER}</code>结尾，因为现在大多数网站输入完账号密码之后大都还有验证码。直到这里才可以真正实现一键输入账号密码，不用再担心输入法到底是中文还是英文</p>
@@ -198,7 +188,7 @@
 <p>倘若发现文章有所纰漏或存在不妥之处，还望指正</p>
 <h1 id="硬件环境"><a href="#硬件环境" class="headerlink" title="硬件环境"></a>硬件环境</h1><h2 id="开发平台-GEC6818"><a href="#开发平台-GEC6818" class="headerlink" title="开发平台 GEC6818"></a>开发平台 GEC6818</h2><p>这个项目使用的是GEC6818开发平台，该平台搭载三星Cortex-A53系列八核处理器S5P6818，最高主频可以达到1.4GHz，可以用于嵌入式Linux和Android等操作系统的驱动、应用开发。开发板支持千兆以太网、板载LVDS接口、MIPI接口、USB接口等</p>
 <h2 id="处理芯片-S5P6818"><a href="#处理芯片-S5P6818" class="headerlink" title="处理芯片 S5P6818"></a>处理芯片 S5P6818</h2><p>S5P6818是三星的64位八核Cortex-A53架构处理器，它和S5P4418芯片管脚完全兼容，唯一不同的就是ARM内核不一样。二者芯片差异如下</p>
-
+<img src="/BJ190619/S5P6818&S5P4418.jpg" class="">
 
 <h1 id="操作系统烧写"><a href="#操作系统烧写" class="headerlink" title="操作系统烧写"></a>操作系统烧写</h1><p>这个板子现在是已经烧好Linux系统，一个操作系统主要包括引导程序（uboot）烧写、内核（kernel）烧写以及文件系统（file_system）烧写<br>（这次主要偏向于Linux系统应用，操作系统部分就先挖个坑好了_(:з」∠)_</p>
 <h1 id="Linux环境搭建"><a href="#Linux环境搭建" class="headerlink" title="Linux环境搭建"></a>Linux环境搭建</h1><h2 id="开机过程"><a href="#开机过程" class="headerlink" title="开机过程"></a>开机过程</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;		加载		挂载</span><br><span class="line">&#x2F;&#x2F;	uboot	---&gt;	kernel	---&gt;	file_system</span><br><span class="line">&#x2F;&#x2F;     引导程序           内核             文件系统</span><br></pre></td></tr></table></figure>
@@ -214,7 +204,7 @@
 <h2 id="连接PC"><a href="#连接PC" class="headerlink" title="连接PC"></a>连接PC</h2><ol>
 <li>正确连接板子的电源线、串口线及USB转串口线<br> USB接PC<br> 公口接开发板自带的串口线的一端母口，另一端母口接开发板串口的公口</li>
 <li>安装USB转串口驱动<br> 1) 安装PL2303驱动<br> <code>\tool\PL2303_Prolific_DriverInstaller_v1210.exe</code><br> 2) 安装Hl-340驱动<br> <code>\tool\Hl-340.exe</code><br> 3) PC查看串口号<br> <code>计算机</code> — <code>管理</code> — <code>设备管理器</code> — <code>端口（COM和LPT）</code> — <code>查看到具体的串口号（如COM3）</code></li>
-<li>打开串口终端(SecureCRT)<br> 端口选前面查到的串口号，其他的按图中配置 
+<li>打开串口终端(SecureCRT)<br> 端口选前面查到的串口号，其他的按图中配置 <img src="/BJ190619/SecureCRTLink.jpg" class="">
  给开发板上电，在终端上显示开发板的启动信息 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[    4.123000] EXT4-fs (mmcblk0p2): re-mounted. Opts: data&#x3D;ordered</span><br><span class="line">[    4.455000] eth0: device MAC address 96:12:7e:f0:02:8e</span><br><span class="line">[    4.462000] stmmac_open: failed PTP initialisation</span><br><span class="line">[    4.473000] gecBt    initialized</span><br><span class="line">[    4.680000] usbcore: registered new interface driver rtl8723bu	---&gt; 开发板成功启动并进入系统，界面上会显示应用程序的界面</span><br></pre></td></tr></table></figure>
  但是，串口终端不能输入，按<code>[Ctrl]</code>+<code>[C]</code>，进入到命令行操作界面 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[root@GEC6818 &#x2F;IOT]#	---&gt; 默认路径为&#x2F;IOT</span><br></pre></td></tr></table></figure>
 <blockquote>
@@ -235,7 +225,7 @@
 <li><p>设置开发板IP</p>
  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1.1) 临时配置IP（仅本次开机有效，重启后恢复）</span><br><span class="line">[root@GEC6818 &#x2F;]#ifconfig eth0 172.16.17.201	---&gt; 给开发板设置一个IP</span><br><span class="line">[root@GEC6818 &#x2F;]#ifconfig eth0 up		---&gt; 开启网卡</span><br><span class="line"></span><br><span class="line">1.2) 永久配置IP</span><br><span class="line">&#x2F;&#x2F;用vi打开配置文件</span><br><span class="line">[root@GEC6818 &#x2F;]#vi &#x2F;etc&#x2F;profile</span><br><span class="line">&#x2F;&#x2F;加入网络配置命令</span><br><span class="line">ifconfig eth0 172.16.17.201</span><br><span class="line">ifconfig eth0 up</span><br><span class="line"></span><br><span class="line">2) 重启开发板</span><br><span class="line">	 </span><br><span class="line">3) 查看确认</span><br><span class="line">[root@GEC6818 &#x2F;]#ifconfig </span><br><span class="line">eth0      Link encap:Ethernet  HWaddr FE:12:5E:C8:00:77  </span><br><span class="line">	  inet addr:172.16.17.201  Bcast:172.16.255.255  Mask:255.255.0.0</span><br><span class="line">	  inet6 addr: fe80::fc12:5eff:fec8:77&#x2F;64 Scope:Link</span><br><span class="line">	  UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1</span><br><span class="line">	  RX packets:43 errors:0 dropped:0 overruns:0 frame:0</span><br><span class="line">	  TX packets:6 errors:0 dropped:0 overruns:0 carrier:0</span><br><span class="line">	  collisions:0 txqueuelen:1000 </span><br><span class="line">	  RX bytes:3468 (3.3 KiB)  TX bytes:468 (468.0 B)</span><br><span class="line">	  Interrupt:80 </span><br><span class="line"></span><br><span class="line">lo        Link encap:Local Loopback  </span><br><span class="line">	  inet addr:127.0.0.1  Mask:255.0.0.0</span><br><span class="line">	  inet6 addr: ::1&#x2F;128 Scope:Host</span><br><span class="line">	  UP LOOPBACK RUNNING  MTU:16436  Metric:1</span><br><span class="line">	  RX packets:0 errors:0 dropped:0 overruns:0 frame:0</span><br><span class="line">	  TX packets:0 errors:0 dropped:0 overruns:0 carrier:0</span><br><span class="line">	  collisions:0 txqueuelen:0 </span><br><span class="line">	  RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)</span><br><span class="line"></span><br><span class="line">4) 测试能否ping通	</span><br><span class="line">[root@GEC6818 &#x2F;]#</span><br><span class="line">[  206.492000] PHY: stmmac-0:04 - Link is Up - 1000&#x2F;Full	---&gt; 网线连上</span><br><span class="line">[  228.540000] PHY: stmmac-0:04 - Link is Down			---&gt; 网线断开</span><br><span class="line">[  234.552000] PHY: stmmac-0:04 - Link is Up - 1000&#x2F;Full</span><br><span class="line"></span><br><span class="line">[root@GEC6818 &#x2F;]#ping 172.16.17.200</span><br><span class="line">PING 172.16.17.200 (172.16.17.200): 56 data bytes</span><br><span class="line">64 bytes from 172.16.17.200: seq&#x3D;0 ttl&#x3D;128 time&#x3D;1.132 ms</span><br><span class="line">64 bytes from 172.16.17.200: seq&#x3D;1 ttl&#x3D;128 time&#x3D;0.901 ms</span><br><span class="line">64 bytes from 172.16.17.200: seq&#x3D;2 ttl&#x3D;128 time&#x3D;0.869 ms</span><br><span class="line">64 bytes from 172.16.17.200: seq&#x3D;3 ttl&#x3D;128 time&#x3D;0.906 ms</span><br><span class="line">64 bytes from 172.16.17.200: seq&#x3D;4 ttl&#x3D;128 time&#x3D;0.964 ms</span><br><span class="line">64 bytes from 172.16.17.200: seq&#x3D;5 ttl&#x3D;128 time&#x3D;0.889 ms</span><br></pre></td></tr></table></figure></li>
 <li><p>设置<code>tftp</code>工具（将PC设为服务器）</p>
- 
+ <img src="/BJ190619/tftp.jpg" class="">
 <p> <code>当前目录</code>：选择要传输的文件目录<br> <code>Server interface</code>：当前PC-IP，一般使用静态IP</p>
 </li>
 <li><p>通过<code>tftp</code>传输文件<br> 1) PC发送到开发板</p>
@@ -317,7 +307,7 @@
 
 <p> <strong>图片只会显示黑白两色？</strong><br> 图像像素点错乱</p>
 <p> <strong>图片右边某些字节显示在LCD屏幕左边</strong><br> 图片理论大小：1152000<br> 图片实际大小：1152054</p>
- 
+ <img src="/BJ190619/24bmp.jpg" class="">
 <p> 多出54字节为文件属性信息,要先跳过这部分头数据，再读取图片的像素点数据<br> 利用lseek偏移</p>
 <p> <strong>图片显示上下颠倒左右不颠倒</strong><br> BMP图片存储时，左下方为第一个字节</p>
 </li>
@@ -621,7 +611,7 @@
 <h3 id="find"><a href="#find" class="headerlink" title="find"></a>find</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">beluga@beluga-Linux:&#x2F;$ find [PATH] [option] [action] </span><br><span class="line"></span><br><span class="line">与时间有关的选项:-atime,-ctime,-mtime</span><br><span class="line">	-mtime n:意义为在n天之前的一天之内被更改过内容的文件</span><br><span class="line">	-mtime +n:列出在n天之前(不含n天本身)被更改过内容的文件名</span><br><span class="line">	-mtime -n:列出在n天之内(含n天本身)被更改过内容的文件名</span><br><span class="line">	-newer file:file为一个存在的文件，列出比file还要新的文件名</span><br><span class="line"></span><br><span class="line">与使用者或群组名称有关的参数</span><br><span class="line">	-uid n:n是用户的帐号ID，即UID</span><br><span class="line">	-gid n:n是用户组名的ID，即GID</span><br><span class="line">	-user name:name为用户账户名,如beluga</span><br><span class="line">	-group name:name为用户组名，如users</span><br><span class="line">	-nouser:查找文件所有者不在&#x2F;etc&#x2F;passwd的文件</span><br><span class="line">	-nogroup:查找文件所有用户组不存在于&#x2F;etc&#x2F;group的文件</span><br><span class="line">	</span><br><span class="line">与档案权限及名称有关的参数</span><br><span class="line">	-name filename:查找文件名为filename的文件</span><br><span class="line">	-size [+-]SIZE:查找比SIZE要大(+)或小(-)的文件</span><br><span class="line">		c:代表byte</span><br><span class="line">		k:代表1024bytes</span><br><span class="line">	-type TYPE:查找文件类型为TYPE的文件</span><br><span class="line">		一般文件(f)</span><br><span class="line">		设备文件(b,c)</span><br><span class="line">		目录(d)</span><br><span class="line">		连接文件(l)</span><br><span class="line">		socket(s)</span><br><span class="line">		FIFO(p)等</span><br><span class="line">	-perm mode:查找权限等于mode的文件</span><br><span class="line">		mode类似chmod的属性值，如-rwsr-xr-x属性为4755</span><br><span class="line">	-perm -mode:查找文件权限全部包括mode权限的文件</span><br><span class="line">	-perm +mode:查找文件权限包含任一mode权限的文件</span><br><span class="line"></span><br><span class="line">其他可进行的操作</span><br><span class="line">	-exec command:-exec后面可接其他命令来处理搜寻到的结果</span><br><span class="line">	-print:将结果打印到屏幕，这个操作是默认操作</span><br><span class="line">——————————</span><br><span class="line">#将系统24小时内改动过内容(mtime)的文件列出 </span><br><span class="line">beluga@beluga-Linux:&#x2F;$ find &#x2F; -mtime 0 </span><br><span class="line">#0代表目前的时间，表示从现在开始到24小时前</span><br><span class="line"></span><br><span class="line">#如果是三天前的24小时内</span><br><span class="line">beluga@beluga-Linux:&#x2F;$ find &#x2F; -mtime 3</span><br><span class="line"></span><br><span class="line">#查询&#x2F;etc的文件，如果日期比&#x2F;etc&#x2F;passwd新就列出 </span><br><span class="line">beluga@beluga-Linux:&#x2F;$ find &#x2F;etc -newer &#x2F;etc&#x2F;passwd</span><br></pre></td></tr></table></figure>
 
 <p><code>find</code>时间参数意义</p>
-
+<img src="/BJ190405/find_time.gif" class="">
 
 <h1 id="编辑日志"><a href="#编辑日志" class="headerlink" title="编辑日志"></a>编辑日志</h1><p><strong>19/05/19</strong><br>1.完善文章前言部分</p>
 <p><strong>20/01/21</strong><br>1.修改文章名称为【Linux：文件与目录管理】<br>2.调整文章编码位置</p>
@@ -805,88 +795,88 @@
 </blockquote>
 <h1 id="在VMware安装Ubuntu"><a href="#在VMware安装Ubuntu" class="headerlink" title="在VMware安装Ubuntu"></a>在VMware安装Ubuntu</h1><ol>
 <li><p>用管理员身份运行VMware，创建新的虚拟机</p>
-
+<img src="/JC190304/P2-1.jpg" class="">
 </li>
 <li><p>选择自定义</p>
-
+<img src="/JC190304/P2-2.jpg" class="">
 </li>
 <li><p>默认即可</p>
-
+<img src="/JC190304/P2-3.jpg" class="">
 </li>
 <li><p>选择稍后安装操作系统</p>
-
+<img src="/JC190304/P2-4.jpg" class="">
 </li>
 <li><p>选择下载的Ubuntu系统版本是64位还是32位</p>
-
+<img src="/JC190304/P2-5.jpg" class="">
 </li>
 <li><p>命名虚拟机名称和选择该虚拟机保存的位置</p>
-
+<img src="/JC190304/P2-6.jpg" class="">
 </li>
 <li><p>为虚拟机指定处理器配置，默认即可也可以按自己实际电脑配置选择</p>
-
+<img src="/JC190304/P2-7.jpg" class="">
 </li>
 <li><p>为虚拟机指定内存配置，默认即可推荐2G</p>
-
+<img src="/JC190304/P2-8.jpg" class="">
 </li>
 <li><p>为虚拟机指定网络配置，默认即可</p>
-
+<img src="/JC190304/P2-9.jpg" class="">
 </li>
 <li><p>为虚拟机指定I/O控制器类型，默认即可</p>
-
+<img src="/JC190304/P2-10.jpg" class="">
 </li>
 <li><p>为虚拟机指定磁盘类型，默认即可</p>
-
+<img src="/JC190304/P2-11.jpg" class="">
 </li>
 <li><p>选择创建新虚拟磁盘</p>
-
+<img src="/JC190304/P2-12.jpg" class="">
 </li>
 <li><p>指定虚拟机磁盘容量，推荐20G以上。磁盘储存方式两种都可以，我这里使用存储成单个文件</p>
-
+<img src="/JC190304/P2-13.jpg" class="">
 </li>
 <li><p>命名存储的磁盘文件名，默认即可</p>
-
+<img src="/JC190304/P2-14.jpg" class="">
 </li>
 <li><p>检查一下刚刚的配置，没问题完成</p>
-
+<img src="/JC190304/P2-15.jpg" class="">
 </li>
 <li><p>回到初始界面，发现首页出现Ubuntu的虚拟机，选择编辑虚拟机设置</p>
-
+<img src="/JC190304/P2-16.jpg" class="">
 </li>
 <li><p>左栏硬件选择CD/DVD，右栏选择使用ISO映像文件，选择下载好的Ubuntu镜像文件，确定</p>
-
+<img src="/JC190304/P2-17.jpg" class="">
 </li>
 <li><p>回到初始界面，选择开启虚拟机，出现下面这个界面</p>
-
+<img src="/JC190304/P2-18.png" class="">
 </li>
 <li><p>选择Ubuntu系统语言，默认或中文皆可</p>
-
+<img src="/JC190304/P2-19.png" class="">
 </li>
 <li><p>选择键盘布局，默认即可</p>
-
+<img src="/JC190304/P2-20.png" class="">
 </li>
 <li><p>选择Ubuntu系统配置，默认即可。我这里为了系统干净选择最小安装，其他选项也一样道理</p>
-
+<img src="/JC190304/P2-21.png" class="">
 </li>
 <li><p>选择清除整个磁盘并安装，若有其他要求可自行选择</p>
-
+<img src="/JC190304/P2-22.png" class="">
 </li>
 <li><p>继续</p>
-
+<img src="/JC190304/P2-23.png" class="">
 </li>
 <li><p>选择时区，输入Shanghai，若有其他要求可自行选择</p>
-
+<img src="/JC190304/P2-24.png" class="">
 </li>
 <li><p>设定在Ubuntu中的用户名，计算机名和密码</p>
-
+<img src="/JC190304/P2-25.png" class="">
 </li>
 <li><p>等待安装</p>
-
+<img src="/JC190304/P2-26.png" class="">
 </li>
 <li><p>安装完成，重启</p>
-
+<img src="/JC190304/P2-27.png" class="">
 </li>
 <li><p>开机完成，进入系统</p>
-
+<img src="/JC190304/P2-28.png" class="">
 
 </li>
 </ol>
@@ -900,5 +890,21 @@
         <tag>Ubuntu</tag>
         <tag>Linux</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>序</title>
+    <url>/SB190301/</url>
+    <content><![CDATA[<p><em>#SB190301</em><br>可终于搭起来啦，折腾了几天。作为第一篇文章，那就聊一下我之所以建这个博客的目的与初衷以及为什么选择自己搭。</p>
+<a id="more"></a>
+<p>倘若发现文章有所纰漏或存在不妥之处，还望指正</p>
+<h1 id="初衷"><a href="#初衷" class="headerlink" title="初衷"></a>初衷</h1><p>在我还在上高中的时候，我就有萌生过自己建一个博客的想法。那时我们学校里面有一个社团，叫「工程设计社」，我也是其中一员。不得不说，在当时存在于高中的社团还是不多的，而这个社团由一群喜欢捣鼓计算机的人建立，平时就是讲解介绍一些计算机概念和一些较为简单的编程语法算法。你可能有听说过「青少年开发者大会」这个活动，其创办人刘敬韬同学当时也就是我们的前社长。我在这个社团里面了解到许多之前从未接触到的东西，像Linux，GPL协议等等。而其中我也是从那第一次知道开源这个词，让我明白有些想法是应该被分享记录的，而这也就是我最初的想要拥有一个博客的原因。</p>
+<h1 id="现阶段的原因"><a href="#现阶段的原因" class="headerlink" title="现阶段的原因"></a>现阶段的原因</h1><p>而后，虽然想法可美好，然而现实是残酷的。受限于当时的时间精力（老师和家长整天都看着你呢），建立博客的计划也就不了了之了。上了大学以后，随着自己经验阅历的增加，又跟着老师参加了几个项目。我想是时候把这个计划重新提上日程了。一方面就像上文所说的可以分享一些自己的想法和经验。另一方面呢也能将自己学到的知识还有一些项目经验比较系统地整理记录下来，这样不仅日后查阅起来你可以知道自己以前做过什么，还可以让自己养成写随笔的习惯（趁机治疗一下自己的拖延症），何乐而不为呢。这就是现阶段的建博的原因。</p>
+<h1 id="为什么选择自己搭"><a href="#为什么选择自己搭" class="headerlink" title="为什么选择自己搭"></a>为什么选择自己搭</h1><p>再说说为什么会选择搭一个而不是找个现有的类似CSDN，简书之类的平台。首先并不是说这些平台不好，相反现有的平台的功能都非常强大，链接了各种东西。但是带来的问题就是也会带来一些广告和某些”特殊用户”的打扰（就连短信都会遇到）。其次由于我本身对博客定位的原因，也并不需要那么多高级的功能和复杂的界面，可以简简单单可以记录些东西就足矣。当然最最主要原因就是自己不折腾一下就浑身难受哈哈哈。<br>最后，也希望自己能够真正的把这个博客经营下去，做到定时地更新维护。<br>好的，就这样。</p>
+<p>2019/3/1</p>
+<h1 id="编辑日志"><a href="#编辑日志" class="headerlink" title="编辑日志"></a>编辑日志</h1><p><strong>20/01/21</strong><br>1.调整文章编码位置</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
   </entry>
 </search>

@@ -27,6 +27,10 @@
 <meta property="og:site_name" content="Beluga">
 <meta property="og:description" content="#BJ190619这个项目是我在参加物联网应用工程师考核时所做的项目。项目的技术重点虽然在于语音识别功能的实现，但这其中还包括关于Linux环境搭建、开发平台与PC的文件传输、BMP刷图、触摸屏操作判断等其他的相关知识。简而言之，这是一个较为完整的嵌入式开发项目，基本的嵌入式开发步骤都能在这找到，希望这个笔记能对你有所帮助。也由于我是边完成项目边整理笔记的缘故，这篇文章的更新时间跨度也变得有些长，">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://tsuicyne.github.io/BJ190619/S5P6818&S5P4418.jpg">
+<meta property="og:image" content="https://tsuicyne.github.io/BJ190619/SecureCRTLink.jpg">
+<meta property="og:image" content="https://tsuicyne.github.io/BJ190619/tftp.jpg">
+<meta property="og:image" content="https://tsuicyne.github.io/BJ190619/24bmp.jpg">
 <meta property="article:published_time" content="2019-06-19T07:13:00.000Z">
 <meta property="article:modified_time" content="2020-01-21T08:27:00.000Z">
 <meta property="article:author" content="TsuiCyne">
@@ -36,6 +40,7 @@
 <meta property="article:tag" content="嵌入式">
 <meta property="article:tag" content="语音识别">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tsuicyne.github.io/BJ190619/S5P6818&S5P4418.jpg">
 
 <link rel="canonical" href="https://tsuicyne.github.io/BJ190619/">
 
@@ -253,7 +258,7 @@
 <p>倘若发现文章有所纰漏或存在不妥之处，还望指正</p>
 <h1 id="硬件环境"><a href="#硬件环境" class="headerlink" title="硬件环境"></a>硬件环境</h1><h2 id="开发平台-GEC6818"><a href="#开发平台-GEC6818" class="headerlink" title="开发平台 GEC6818"></a>开发平台 GEC6818</h2><p>这个项目使用的是GEC6818开发平台，该平台搭载三星Cortex-A53系列八核处理器S5P6818，最高主频可以达到1.4GHz，可以用于嵌入式Linux和Android等操作系统的驱动、应用开发。开发板支持千兆以太网、板载LVDS接口、MIPI接口、USB接口等</p>
 <h2 id="处理芯片-S5P6818"><a href="#处理芯片-S5P6818" class="headerlink" title="处理芯片 S5P6818"></a>处理芯片 S5P6818</h2><p>S5P6818是三星的64位八核Cortex-A53架构处理器，它和S5P4418芯片管脚完全兼容，唯一不同的就是ARM内核不一样。二者芯片差异如下</p>
-
+<img src="/BJ190619/S5P6818&S5P4418.jpg" class="">
 
 <h1 id="操作系统烧写"><a href="#操作系统烧写" class="headerlink" title="操作系统烧写"></a>操作系统烧写</h1><p>这个板子现在是已经烧好Linux系统，一个操作系统主要包括引导程序（uboot）烧写、内核（kernel）烧写以及文件系统（file_system）烧写<br>（这次主要偏向于Linux系统应用，操作系统部分就先挖个坑好了_(:з」∠)_</p>
 <h1 id="Linux环境搭建"><a href="#Linux环境搭建" class="headerlink" title="Linux环境搭建"></a>Linux环境搭建</h1><h2 id="开机过程"><a href="#开机过程" class="headerlink" title="开机过程"></a>开机过程</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;		加载		挂载</span><br><span class="line">&#x2F;&#x2F;	uboot	---&gt;	kernel	---&gt;	file_system</span><br><span class="line">&#x2F;&#x2F;     引导程序           内核             文件系统</span><br></pre></td></tr></table></figure>
@@ -269,7 +274,7 @@
 <h2 id="连接PC"><a href="#连接PC" class="headerlink" title="连接PC"></a>连接PC</h2><ol>
 <li>正确连接板子的电源线、串口线及USB转串口线<br> USB接PC<br> 公口接开发板自带的串口线的一端母口，另一端母口接开发板串口的公口</li>
 <li>安装USB转串口驱动<br> 1) 安装PL2303驱动<br> <code>\tool\PL2303_Prolific_DriverInstaller_v1210.exe</code><br> 2) 安装Hl-340驱动<br> <code>\tool\Hl-340.exe</code><br> 3) PC查看串口号<br> <code>计算机</code> — <code>管理</code> — <code>设备管理器</code> — <code>端口（COM和LPT）</code> — <code>查看到具体的串口号（如COM3）</code></li>
-<li>打开串口终端(SecureCRT)<br> 端口选前面查到的串口号，其他的按图中配置 
+<li>打开串口终端(SecureCRT)<br> 端口选前面查到的串口号，其他的按图中配置 <img src="/BJ190619/SecureCRTLink.jpg" class="">
  给开发板上电，在终端上显示开发板的启动信息 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[    4.123000] EXT4-fs (mmcblk0p2): re-mounted. Opts: data&#x3D;ordered</span><br><span class="line">[    4.455000] eth0: device MAC address 96:12:7e:f0:02:8e</span><br><span class="line">[    4.462000] stmmac_open: failed PTP initialisation</span><br><span class="line">[    4.473000] gecBt    initialized</span><br><span class="line">[    4.680000] usbcore: registered new interface driver rtl8723bu	---&gt; 开发板成功启动并进入系统，界面上会显示应用程序的界面</span><br></pre></td></tr></table></figure>
  但是，串口终端不能输入，按<code>[Ctrl]</code>+<code>[C]</code>，进入到命令行操作界面 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@GEC6818 &#x2F;IOT]#	---&gt; 默认路径为&#x2F;IOT</span><br></pre></td></tr></table></figure>
 <blockquote>
@@ -290,7 +295,7 @@
 <li><p>设置开发板IP</p>
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">1.1) 临时配置IP（仅本次开机有效，重启后恢复）</span><br><span class="line">[root@GEC6818 &#x2F;]#ifconfig eth0 172.16.17.201	---&gt; 给开发板设置一个IP</span><br><span class="line">[root@GEC6818 &#x2F;]#ifconfig eth0 up		---&gt; 开启网卡</span><br><span class="line"></span><br><span class="line">1.2) 永久配置IP</span><br><span class="line">&#x2F;&#x2F;用vi打开配置文件</span><br><span class="line">[root@GEC6818 &#x2F;]#vi &#x2F;etc&#x2F;profile</span><br><span class="line">&#x2F;&#x2F;加入网络配置命令</span><br><span class="line">ifconfig eth0 172.16.17.201</span><br><span class="line">ifconfig eth0 up</span><br><span class="line"></span><br><span class="line">2) 重启开发板</span><br><span class="line">	 </span><br><span class="line">3) 查看确认</span><br><span class="line">[root@GEC6818 &#x2F;]#ifconfig </span><br><span class="line">eth0      Link encap:Ethernet  HWaddr FE:12:5E:C8:00:77  </span><br><span class="line">	  inet addr:172.16.17.201  Bcast:172.16.255.255  Mask:255.255.0.0</span><br><span class="line">	  inet6 addr: fe80::fc12:5eff:fec8:77&#x2F;64 Scope:Link</span><br><span class="line">	  UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1</span><br><span class="line">	  RX packets:43 errors:0 dropped:0 overruns:0 frame:0</span><br><span class="line">	  TX packets:6 errors:0 dropped:0 overruns:0 carrier:0</span><br><span class="line">	  collisions:0 txqueuelen:1000 </span><br><span class="line">	  RX bytes:3468 (3.3 KiB)  TX bytes:468 (468.0 B)</span><br><span class="line">	  Interrupt:80 </span><br><span class="line"></span><br><span class="line">lo        Link encap:Local Loopback  </span><br><span class="line">	  inet addr:127.0.0.1  Mask:255.0.0.0</span><br><span class="line">	  inet6 addr: ::1&#x2F;128 Scope:Host</span><br><span class="line">	  UP LOOPBACK RUNNING  MTU:16436  Metric:1</span><br><span class="line">	  RX packets:0 errors:0 dropped:0 overruns:0 frame:0</span><br><span class="line">	  TX packets:0 errors:0 dropped:0 overruns:0 carrier:0</span><br><span class="line">	  collisions:0 txqueuelen:0 </span><br><span class="line">	  RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)</span><br><span class="line"></span><br><span class="line">4) 测试能否ping通	</span><br><span class="line">[root@GEC6818 &#x2F;]#</span><br><span class="line">[  206.492000] PHY: stmmac-0:04 - Link is Up - 1000&#x2F;Full	---&gt; 网线连上</span><br><span class="line">[  228.540000] PHY: stmmac-0:04 - Link is Down			---&gt; 网线断开</span><br><span class="line">[  234.552000] PHY: stmmac-0:04 - Link is Up - 1000&#x2F;Full</span><br><span class="line"></span><br><span class="line">[root@GEC6818 &#x2F;]#ping 172.16.17.200</span><br><span class="line">PING 172.16.17.200 (172.16.17.200): 56 data bytes</span><br><span class="line">64 bytes from 172.16.17.200: seq&#x3D;0 ttl&#x3D;128 time&#x3D;1.132 ms</span><br><span class="line">64 bytes from 172.16.17.200: seq&#x3D;1 ttl&#x3D;128 time&#x3D;0.901 ms</span><br><span class="line">64 bytes from 172.16.17.200: seq&#x3D;2 ttl&#x3D;128 time&#x3D;0.869 ms</span><br><span class="line">64 bytes from 172.16.17.200: seq&#x3D;3 ttl&#x3D;128 time&#x3D;0.906 ms</span><br><span class="line">64 bytes from 172.16.17.200: seq&#x3D;4 ttl&#x3D;128 time&#x3D;0.964 ms</span><br><span class="line">64 bytes from 172.16.17.200: seq&#x3D;5 ttl&#x3D;128 time&#x3D;0.889 ms</span><br></pre></td></tr></table></figure></li>
 <li><p>设置<code>tftp</code>工具（将PC设为服务器）</p>
- 
+ <img src="/BJ190619/tftp.jpg" class="">
 <p> <code>当前目录</code>：选择要传输的文件目录<br> <code>Server interface</code>：当前PC-IP，一般使用静态IP</p>
 </li>
 <li><p>通过<code>tftp</code>传输文件<br> 1) PC发送到开发板</p>
@@ -372,7 +377,7 @@
 
 <p> <strong>图片只会显示黑白两色？</strong><br> 图像像素点错乱</p>
 <p> <strong>图片右边某些字节显示在LCD屏幕左边</strong><br> 图片理论大小：1152000<br> 图片实际大小：1152054</p>
- 
+ <img src="/BJ190619/24bmp.jpg" class="">
 <p> 多出54字节为文件属性信息,要先跳过这部分头数据，再读取图片的像素点数据<br> 利用lseek偏移</p>
 <p> <strong>图片显示上下颠倒左右不颠倒</strong><br> BMP图片存储时，左下方为第一个字节</p>
 </li>
